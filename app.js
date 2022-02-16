@@ -73,3 +73,31 @@ playButton.addEventListener('click', function () {
 
     }
 })
+
+// CREO L'ARRAY DI BOMBE DA ASSEGNARE ALLE CASELLE
+const bombArray = [];
+console.log(bombArray);
+
+// CREO CICLO PER LA GENERAZIONE DELLE BOMBE
+while (bombArray.length < 16) {
+    let randomNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+    if(!bombArray.includes(randomNumber)) {
+        bombArray.push(randomNumber);
+    }
+}
+
+// CREO L'ASCOLTO AL CLICK AL GRID-CONTAINER
+gridContainer.addEventListener('click', function(event) {
+    console.log(event)
+
+    const selectedCell = event.target;
+    console.log(selectedCell);
+
+    if (selectedCell.classList.contains('cell')) {
+        if (bombArray.includes(parseInt(selectedCell.innerHTML))) {
+            selectedCell.style.background = `#ff0000`;
+        } else {
+            selectedCell.style.background = `#9acd32`;
+        }
+    }
+})
