@@ -10,6 +10,10 @@ console.log(gridContainer);
 const playButton = document.getElementById('play_button');
 console.log(playButton);
 
+// CREO L'ARRAY DI BOMBE DA ASSEGNARE ALLE CASELLE
+const bombArray = [];
+console.log(bombArray);
+
 // CREO L'ASCOLTO AL CLICK DEL PULSANTE PLAY
 playButton.addEventListener('click', function () {
     
@@ -41,6 +45,14 @@ playButton.addEventListener('click', function () {
             gridContainer.append(cellElement);
         }
 
+        // CREO CICLO PER LA GENERAZIONE DELLE BOMBE
+        while (bombArray.length < 16) {
+            let randomNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+            if (!bombArray.includes(randomNumber)) {
+                bombArray.push(randomNumber);
+            }
+        }
+
         mainContainer.style.background = `#87cefa`;
 
     } else if (difficulty == 'Hard') {
@@ -53,6 +65,14 @@ playButton.addEventListener('click', function () {
             cellElement.style.width = `calc(100% / 9)`;
             cellElement.innerHTML = `${i}`;
             gridContainer.append(cellElement);
+        }
+
+        // CREO CICLO PER LA GENERAZIONE DELLE BOMBE
+        while (bombArray.length < 16) {
+            let randomNumber = Math.floor(Math.random() * (81 - 1 + 1) + 1);
+            if (!bombArray.includes(randomNumber)) {
+                bombArray.push(randomNumber);
+            }
         }
 
         mainContainer.style.background = `#ffd700`;
@@ -69,22 +89,18 @@ playButton.addEventListener('click', function () {
             gridContainer.append(cellElement);
         }
 
+        // CREO CICLO PER LA GENERAZIONE DELLE BOMBE
+        while (bombArray.length < 16) {
+            let randomNumber = Math.floor(Math.random() * (49 - 1 + 1) + 1);
+            if (!bombArray.includes(randomNumber)) {
+                bombArray.push(randomNumber);
+            }
+        }
+
         mainContainer.style.background = `#ff4500`;
 
     }
 })
-
-// CREO L'ARRAY DI BOMBE DA ASSEGNARE ALLE CASELLE
-const bombArray = [];
-console.log(bombArray);
-
-// CREO CICLO PER LA GENERAZIONE DELLE BOMBE
-while (bombArray.length < 16) {
-    let randomNumber = Math.floor(Math.random() * (100 - 1 + 1) + 1);
-    if(!bombArray.includes(randomNumber)) {
-        bombArray.push(randomNumber);
-    }
-}
 
 // CREO L'ASCOLTO AL CLICK AL GRID-CONTAINER
 gridContainer.addEventListener('click', function(event) {
