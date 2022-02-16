@@ -114,6 +114,10 @@ footer {
     cursor: pointer;
 }
 
+.bomb_cell {
+    background: red;
+}
+
 .footer_content h5 {
     font-weight: normal;
 }

@@ -104,14 +104,25 @@ playButton.addEventListener('click', function () {
 
 // CREO L'ASCOLTO AL CLICK AL GRID-CONTAINER
 gridContainer.addEventListener('click', function(event) {
-    console.log(event)
 
     const selectedCell = event.target;
     console.log(selectedCell);
 
     if (selectedCell.classList.contains('cell')) {
+
         if (bombArray.includes(parseInt(selectedCell.innerHTML))) {
             selectedCell.style.background = `#ff0000`;
+
+            // VARIABILE PER SELEZIONARE TUTTE LE CELLE CON LE BOMBE
+            const cellWithBomb = document.getElementsByClassName('cell');
+
+            // CICLO PER FAR COMPARIRE TUTTE LE BOMBE
+            for(let i = 0; i < cellWithBomb.length; i++) {
+                if (bombArray.includes(parseInt(cellWithBomb[i].innerHTML))) {
+                    cellWithBomb[i].classList.add('bomb_cell');
+                }
+            }
+            
         } else {
             selectedCell.style.background = `#9acd32`;
         }
