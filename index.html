@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://boolean.careers/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Campo Minato</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header_content">
+            <!-- LOGO WRAPPER -->
+            <div class="logo_wrapper">
+                <div class="logo">
+                    <img src="img/logo-small.png">
+                </div>
+                <h1>Campo Minato</h1>
+            </div>
+            <!-- SELECT DIFFICULTY WRAPPER -->
+            <div class="select_button_wrapper">
+                <p>Difficoltà:</p>
+                <select name="seleziona-la-difficolta" id="select_difficulty">
+                    <option value="Scegli" disabled selected>Scegli</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Crazy">Crazy</option>
+                </select>
+                <button id="play_button">Play</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main">
+        <div class="container main_content">
+            <div class="grid_container"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer_content">
+            <h5>Made with <i class="fa-solid fa-heart" style="color: red;"></i> by <a href="#">Marco Corallo</a></h5>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+</html>
